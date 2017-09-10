@@ -1,0 +1,6 @@
+hello, ${name, %s},  how old are you ?
+Hi, I'm ${age, %d}, what about you?
+Well, I am ${age1, %d}.  How lang have you been here?
+I came here on ${time,  %tD}, so It's ${number, %d} years.
+but I don't like ${here} ;
+some developers like use ${obj.anme , %s}, all right, we support it anyway.

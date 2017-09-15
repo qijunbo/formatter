@@ -9,12 +9,11 @@ public class Test {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void main(String[] args) throws FileNotFoundException {
 
-		Map m = new HashMap();
-		m.put("name", "tony");
-		m.put("age", 36);
-		m.put("age1", 34);
-		m.put("time", Calendar.getInstance());
-		m.put("number", 1000);
+        Map m = new HashMap();
+        m.put("clientid", "tony");
+        m.put("app.port", 12121);
+        m.put("context.path", "iframework/");
+
 
 		System.out.print(Template.loadFrom(Test.class.getResourceAsStream("template")).format(m));
 

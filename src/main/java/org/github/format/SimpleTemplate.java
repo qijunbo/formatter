@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.IntStream;
 
 /**
  * 
@@ -109,10 +110,10 @@ public class SimpleTemplate implements Template {
 
 		while (m.find(next)) {
 
-			// IntStream.range(0, m.groupCount() + 1).forEach(i ->
-			// System.out.print(i + ": " + m.group(i) + "\t"));
-			// OSystem.out.println(String.format("Start: %d, End: %d .\n",
-			// m.start(), m.end()));
+			 IntStream.range(0, m.groupCount() + 1).forEach(i ->
+			 System.out.print(i + ": " + m.group(i) + "\t"));
+			 System.out.println(String.format("Start: %d, End: %d .\n",
+			 m.start(), m.end()));
 
 			Optional.ofNullable(values.get(m.group(1))).ifPresent(value -> {
 				Formatter formatter = new Formatter();
@@ -125,7 +126,7 @@ public class SimpleTemplate implements Template {
 				formatter.close();
 			});
 			//@formatter:on
-			next = m.end();
+			next = m.start();
 		}
 
 		return buffer;
